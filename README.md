@@ -7,6 +7,7 @@
 - [System Overview](Project%20Description%20and%20Presentation/System%20Overview.pdf)
 - [Getting Started Guide](Project%20Description%20and%20Presentation/Getting%20Started%20Guide.pdf)
 - [Slideshow](Project%20Description%20and%20Presentation/Video%20Streaming%20Capstone%20Presentation.pptx)
+- [GitHub Website](https://ezcrystal.github.io/)
 - [Scope and Use Cases](Project%20Description%20and%20Presentation/scope.md)
 - [Distributed System Challenges](Project%20Description%20and%20Presentation/challenges.md)
 - [Workflow Diagrams (BPMN)](Project%20Description%20and%20Presentation/workflow.md)
