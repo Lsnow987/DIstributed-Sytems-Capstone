@@ -29,28 +29,6 @@ services:
       - DB_PORT=4700
     deploy:
       replicas: 1
-    networks:
-      - myappnetwork
-
-  sender:
-    image: lsnow987/sender:v318
-    environment:
-      - RABBITMQ_HOST=192.168.1.3 # RabbitMQ server hostname or IP
-      - RABBITMQ_PORT=5672 # RabbitMQ port
-      - RABBITMQ_USERNAME=guest # RabbitMQ username
-      - RABBITMQ_PASSWORD=guest # RabbitMQ password
-      - RABBITMQ_QUEUE_NAME=video-processing-queue # RabbitMQ queue name
-      - AWS_PUSH_BUCKET=transcoded-video-bucket-1
-      - AWS_PULL_BUCKET=unprocessed-video-bucket-1
-      - AWS_ENDPOINT=http://192.168.1.121:5656
-      - TASK_DELAY=20000 #milliseconds
-      - SEGMENT_DURATION=6 # seconds
-      - VIDEO_PATH=/app/GadiTestVideo.mp4
-      - RABBITMQ_LOGGER_QUEUE_NAME=mongo-log-queue # mongo logs queue name
-      - IS_DB_SETUP=false # Flag indicating if database setup is needed
-      - MONGODB_HOST=123.456.789 # MongoDB server hostname or IP
-    deploy:
-      replicas: 1
 
   # Scaler service for scaling receiver instances based on queue size
   scaler:
