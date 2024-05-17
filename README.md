@@ -4,11 +4,11 @@
 
 ## Project Plan
 
-- [Scope and Use Cases](scope.md)
-- [Distributed System Challenges](challenges.md)
-- [Workflow Diagrams (BPMN)](workflow.md)
-- [Software Architecture Diagrams (C4)](architecture.md)
-- [Tools & Technologies](technologies.md)
+- [Scope and Use Cases](Project%20Description%20and%20Presentation/scope.md)
+- [Distributed System Challenges](Project%20Description%20and%20Presentation/challenges.md)
+- [Workflow Diagrams (BPMN)](Project%20Description%20and%20Presentation/workflow.md)
+- [Software Architecture Diagrams (C4)](Project%20Description%20and%20Presentation/architecture.md)
+- [Tools & Technologies](Project%20Description%20and%20Presentation/technologies.md)
 
 ## Overview
 
