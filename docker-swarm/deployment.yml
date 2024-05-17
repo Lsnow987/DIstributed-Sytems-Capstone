@@ -66,7 +66,7 @@ services:
       - CONTAINER_NAME=myapp_receiver # Name of the container to scale
       - MAX_INSTANCES_PER_MACHINE=5 # Maximum instances per machine
       #- IP_ADDRESSES=192.168.1.2 # IP addresses for scaling
-      - DOCKER_TOKEN="docker swarm join --token SWMTKN-1-12n3zky8x8lddy2rf0sd0kmvyf428nmvemcjxs9absqwe14qbl-cazt19zyj853g8541y6qd5p3o 192.168.1.4:2377" # Docker swarm token for joining
+      - DOCKER_TOKEN="docker swarm join -- token ..." # Docker swarm token for joining
       - DELAY_TIME=35000 # Delay time for scaling
       - SLEEP_TIME=30000 # Sleep time for scaling
     deploy:
