@@ -14,8 +14,6 @@
 
 ## Overview
 
-Our project serves as a middleman between Groups 1 and 3. Group 1 will provide us with a distributed storage service that allows users to upload videos; from our perspective, this is essentially an S3 bucket. Group 3 segments each video into multiple parts based on the number of available nodes, making it easier for us to process them.
+When watching a video on YouTube, the video quality is dynamically adjusted based on the viewer's internet bandwidth to ensure the smoothest possible viewing experience. We set out to create a system that replicates this functionality. Videos have to be prepared to be streamed in such a manner. This preparation entails transcoding videos into multiple resolutions and bitrates to provide options for our clients depending on their bandwidth. Our project focuses on this preparation aspect.
 
-Our project retrieves these videos and applies a number of transformations to them. We convert each video into a number of different resolutions and bitrates, allowing clients to choose between various options depending on their available bandwidth. We do all of this in a highly distributed manner, concurrently handling the processing of many video files and auto-scaling as necessary. Finally, we log status updates to a database, which will be needed by Group 3 in order for them to implement failure handling.
-
-We then upload the transcoded videos to the database. Group 3 is responsible for handling workflow management and client-facing issues using the infrastructure we built, so they will handle sending the video to the client.
+Clients send us requests to transcode videos stored in an object store. We retrieve the relevant videos, transcode them into various resolutions and bitrates, and upload the final results back to the object store. We do all of this in a highly distributed manner, concurrently handling the processing of many video files and auto-scaling as necessary. Throughout this process, we log status updates to a database and publish them to a message bus.
