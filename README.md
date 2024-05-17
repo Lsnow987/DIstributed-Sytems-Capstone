@@ -2,8 +2,10 @@
 
 **Team Members:** [Ephraim Crystal](mailto:ecrysta1@mail.yu.edu), [Lawrence Snow](mailto:lsnow@mail.yu.edu), [Yonatan Reiter](mailto:yreiter@mail.yu.edu)
 
-## Project Plan
+## Links
 
+- [System Overview](Project%20Description%20and%20Presentation/System%20Overview.pdf)
+- [Slideshow](Project%20Description%20and%20Presentation/Video%20Streaming%20Capstone%20Presentation.pptx)
 - [Scope and Use Cases](Project%20Description%20and%20Presentation/scope.md)
 - [Distributed System Challenges](Project%20Description%20and%20Presentation/challenges.md)
 - [Workflow Diagrams (BPMN)](Project%20Description%20and%20Presentation/workflow.md)
