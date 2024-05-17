@@ -1,0 +1,20 @@
+# docker-compose -f rabbitmq.yml up
+# docker-compose -f rabbitmq.yml down
+
+# Docker Compose file for deploying RabbitMQ, acting as the middleware between sender and receiver/worker.
+
+version: '3.8'
+
+services:
+  # RabbitMQ service
+  rabbitmq:
+    # Use the RabbitMQ image with management plugin
+    image: rabbitmq:3-management
+    deploy:
+      # Deploy 1 replicas of RabbitMQ 
+      replicas: 1
+    ports:
+      # Expose management interface port
+      - "15672:15672"
+      # Expose RabbitMQ port
+      - "5672:5672"

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define the project structure and metadata -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Specify the Maven model version -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Define the packaging type for the project -->
+    <packaging>jar</packaging>
+
+    <!-- Define project coordinates: Group ID, Artifact ID, and Version -->
+    <groupId>org.example</groupId>
+    <artifactId>H264_Codec</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Define project properties -->
+    <properties>
+        <!-- Specify encoding for project source files -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Specify Java compiler source compatibility -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <!-- Specify Java compiler target compatibility -->
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <!-- Define project dependencies -->
+    <dependencies>
+        <!-- JUnit Jupiter dependency for testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JSON dependency -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Configure build settings -->
+    <build>
+        <!-- Define Maven plugins -->
+        <plugins>
+            <!-- Maven Assembly Plugin configuration -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version> <!-- Use the latest version -->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
