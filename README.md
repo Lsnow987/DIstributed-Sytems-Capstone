@@ -1,13 +1,19 @@
-"# V2" 
+# Video transcoding and segmentation
 
-https://piazza.com/class_profile/get_resource/lrjkxvdqusogp/lrjl2czo1fp3ut
+**Team Members:** [Ephraim Crystal](mailto:ecrysta1@mail.yu.edu), [Lawrence Snow](mailto:lsnow@mail.yu.edu), [Yonatan Reiter](mailto:yreiter@mail.yu.edu)
 
-https://github.com/Yeshiva-University-CS/COM4020_SPR24/tree/main
+## Project Plan
 
-https://docs.google.com/document/d/1Zc95s_fpJldiRQKYAqNy9fe4t20XpdjIzOIwa3eTmhg/edit?usp=sharing
+- [Scope and Use Cases](scope.md)
+- [Distributed System Challenges](challenges.md)
+- [Workflow Diagrams (BPMN)](workflow.md)
+- [Software Architecture Diagrams (C4)](architecture.md)
+- [Tools & Technologies](technologies.md)
 
-https://docs.google.com/document/d/1G5fb4KiOoMADJA9OdS1rStQWt9aZ4KQVNE6K3LA2eSs/edit - getting started guide
+## Overview
 
-https://docs.google.com/presentation/d/1g_sARnl3-Ci6dMoRZATvlJbAHaRuth_Ox-UnsjLSFtw/edit?usp=sharing - PowerPoint
+Our project serves as a middleman between Groups 1 and 3. Group 1 will provide us with a distributed storage service that allows users to upload videos; from our perspective, this is essentially an S3 bucket. Group 3 segments each video into multiple parts based on the number of available nodes, making it easier for us to process them.
 
-https://docs.google.com/document/d/1c-vbhsE4OWV2Xoraw4_23A1RVJbqHdO-NJLxfoYBMhI/edit#heading=h.ldxa0umsm02t - capstone writeup
+Our project retrieves these videos and applies a number of transformations to them. We convert each video into a number of different resolutions and bitrates, allowing clients to choose between various options depending on their available bandwidth. We do all of this in a highly distributed manner, concurrently handling the processing of many video files and auto-scaling as necessary. Finally, we log status updates to a database, which will be needed by Group 3 in order for them to implement failure handling.
+
+We then upload the transcoded videos to the database. Group 3 is responsible for handling workflow management and client-facing issues using the infrastructure we built, so they will handle sending the video to the client.
